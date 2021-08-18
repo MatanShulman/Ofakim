@@ -4,7 +4,64 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*CSS*@
+<style>
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        flex-direction: column;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 10px 10px;
+    }
+
+    th {
+        background-color: lightgray;
+    }
+
+    th,
+    td {
+        width: 200px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 3px;
+    }
+</style>
+
+<div class="wrapper">
+    <div>
+        <h2>Currency Converter</h2>
+    </div>
+    <div>
+
+        @{
+            if (Model.ModelList.Count == 0)
+            {
+                <div>Sorry it's seems that there is no result right now, please try again in a few minutes</div>
+            }
+            else
+            {
+                <table class="text-center">
+                    <tr>
+                        <th>Type</th>
+                        <th>Value</th>
+                        <th>Last Update</th>
+                    </tr>
+                    @foreach (var item in Model.ModelList)
+                    {
+                        <tr>
+                            <td>@item.Type</td>
+                            <td>@item.Value</td>
+                            <td>@item.LastUpdate</td>
+                        </tr>
+                    }
+                </table>
+            }
+        }
+    </div>
 </div>

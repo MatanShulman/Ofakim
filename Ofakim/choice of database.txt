@@ -1,0 +1,6 @@
+﻿The storage method that I chose needed to be light and fast  so I chose a file for saving the data and also:
+1.amount of data was very small 
+2.there is no complex queries 
+3.no need of managing a complex queue (multithreaded) which I solve with a lock
+4.update the data is simple and not structed.
+5.no constraint.
