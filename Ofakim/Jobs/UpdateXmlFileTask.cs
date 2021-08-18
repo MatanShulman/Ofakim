@@ -20,8 +20,7 @@ namespace Ofakim.Jobs
         {
             lock (IndexModel.xmlFileLock)
             {
-
-                var date = DateTime.Now;
+                               
 
                 try
                 {
